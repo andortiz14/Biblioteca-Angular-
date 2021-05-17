@@ -1,0 +1,50 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div>
+      <h3>Libros Registrados
+        <button  type="button" class="btn btn-primary float-left" (click)="nuevoLibro()">Nuevo Libro</button>
+      </h3>            
+    </div> 
+    <br/>
+    <br/>
+    <div class="col">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search....." name="filterLibros" [(ngModel)]= "filterLibros">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+              
+        <div>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">id</th>   
+                <th scope="col">Titulo</th> 
+                <th scope="col">Año</th> 
+                <th scope="col">Genero</th>
+                <th scope="col">Paginas</th>
+                <th scope="col">Editoria</th>
+                <th scope="col">Autor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let libro of libros | filter:filterLibros">
+                <td>{{libro.lbrId }}</td>   
+                <td>{{libro.lbrTitulo }}</td> 
+                <td>{{libro['lbrAño']}}</td>                      
+                <td>{{libro.lbrGenero }}</td>
+                <td>{{libro.lbrNumeroPaginas }}</td>
+                <td>{{libro.lbrEdtId }}</td>
+                <td>{{libro.lbrAtrId }}</td>
+              </tr>      
+            </tbody>
+          </table>
+        </div>
+    </div>
+</div>
+  
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,18 @@
+<nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-text">
+        Biblioteca
+      </span>
+      <div class="container">
+        <a clas="navbar-brand">Biblioteca</a>
+        <ul class="nav navbar-nav" routerLinkActive="active">
+          <li class="nav-item"><a class="nav-link" (click)="redirectLibro()" routerLink="vistas/libro">Libro</a></li>          
+        </ul> 
+        <ul class="nav navbar-nav" routerLinkActive="active">          
+          <li class="nav-item"><a class="nav-link" (click)="redirectAutor()" routerLink="vistas/autor">Autor</a></li>
+        </ul> 
+        <ul class="nav navbar-nav" routerLinkActive="active">          
+          <li class="nav-item"><a class="nav-link" (click)="redirectEditorial()" routerLink="vistas/editorial">Editorial</a></li>
+        </ul>        
+      </div>
+  </nav>
+  <br><br>

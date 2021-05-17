@@ -1,0 +1,50 @@
+<app-header></app-header>
+
+<div class="container"> 
+    <h3>Registrar Libro</h3>  
+
+    <fom [formGroup]="nuevoForm">
+        <div class="form-group">
+            <label for="libroFormcontrol">Titulo</label>         
+            <input type="text" class="form-control" placeholder="Nombre de Libro" formControlName="lbrTitulo">
+        </div>
+        <div class="form group row">
+            <div class="col">
+                <label for="libroFormcontrol">Año</label>         
+                <input type="number" class="form-control" placeholder="Año" formControlName="lbrAño">    
+            </div>
+            <div class="col">
+                <label for="libroFormcontrol">Genero</label>         
+                <input type="text" class="form-control" placeholder="Genero" formControlName="lbrGenero">    
+            </div>
+            <div class="col">
+                <label for="libroFormcontrol">Paginas</label>         
+                <input type="number" class="form-control" placeholder="Numero Paginas" formControlName="lbrNumeroPaginas">    
+            </div>
+            <div class="form group row">
+                <div class="col">
+                    <label for="libroFormcontrol">Editorial</label> 
+                    <select class="form-control" id="edtId"  formControlName="lbrEdtId">
+                        <option value="" disabled selected hidden>Seleccione.....</option>                        
+                        <option *ngFor="let editorial of editoriales" [ngValue]= editorial.edtId >{{editorial.edtNombre}}</option>             
+                    </select>    
+                </div>
+                <div class="col">
+                    <label for="libroFormcontrol">Autor</label> 
+                    <select class="form-control" id="atrId"  formControlName="lbrAtrId" required>
+                        <option value="" disabled selected hidden>Seleccione.....</option>               
+                        <option *ngFor="let autor of autores" [ngValue]= autor.atrId >{{autor.atrNombre}}</option>             
+                    </select>   
+                </div>
+            </div>
+        </div>
+        <br/>
+        <button type="button" class="btn btn-warning" (click)="volver()">volver</button>
+        <button type="button" class="btn btn-primary" (click)="postForm(nuevoForm.value)">Crear</button>
+
+    </fom>
+    
+</div>
+
+
+<app-footer></app-footer>
